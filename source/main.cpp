@@ -126,7 +126,7 @@ void DrawHelperOverlay(Grid grid, Bitmap bitmap)
                 {
                     UV location = helper_locations[feature];
                     uint hx = x * grid.cell_width + uint(location.x * grid.cell_width);
-                    uint hy = y * grid.cell_height + uint(location.y * grid.cell_height);
+                    uint hy = y * grid.cell_height + uint((1.0f - location.y) * grid.cell_height);
                     DrawBox(bitmap, colors[feature], hx, hy, 2, 2);
                 }
             }
